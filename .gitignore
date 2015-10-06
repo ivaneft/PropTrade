@@ -9,3 +9,8 @@
 /PropTrade.Api/bin
 /PropTrade.Api/obj
 /PropTrade.Api/Properties/PublishProfiles
+/PropTrade.Api.Tests/bin/Debug
+/PropTrade.Api.Tests/obj/Debug
+*.suo
+/PropTrade.App/ClientApp/node_modules
+/PropTrade.App/ClientApp/bower_components

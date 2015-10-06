@@ -71,6 +71,11 @@ namespace PropTrade.Api.Repositories
 
             if (existingProperty != null)
             {
+                foreach (var offer in existingProperty.Offers.ToList())
+                {
+                    this.dbContext.Entry(offer).State = EntityState.Deleted;
+                }
+
                 this.dbContext.Properties.Remove(existingProperty);
                 await this.dbContext.SaveChangesAsync();
             }

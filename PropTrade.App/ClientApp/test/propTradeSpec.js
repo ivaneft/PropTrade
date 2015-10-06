@@ -3,7 +3,7 @@
         $scope,
         $httpBackend,
         $controller/*,
-        calculator*/;
+        propTradeServices*/;
 
     beforeEach(angular.mock.module('propTradeApp'));
 
@@ -12,27 +12,43 @@
         $scope = $rootScope.$new();
         $httpBackend = $injector.get('$httpBackend');
         $controller = $injector.get('$controller');
-        //calculator = $injector.get('propTradeApp');
+        //propTradeServices = $injector.get('propTradeServices');
     }));
 
-    describe('propTradeCtrl', function () {
+    describe('startCtrl', function () {
 
         beforeEach(function () {
             controller = function () {
-                $controller('propTradeCtrl', {
+                $controller('startCtrl', {
                     '$rootScope': $rootScope,
                     '$scope': $scope
                 });
             };
         });
 
-        it('properly initializes the view model', function () {
+        it('properly initializes the startCtrl', function () {
             controller();
 
-            expect(true).toBeTruthy();
+            var expectedLoadings = {
+                signingUp: false,
+                signingIn: false
+            };
+
+            var expectedCredentials = {
+                Username: '',
+                Password: ''
+            };
+
+            var expectedNewUser = {
+                Address: {}
+            };
+
+            expect($scope.loadings).toEqual(expectedLoadings);
+            expect($scope.credentials).toEqual(expectedCredentials);
+            expect($scope.newUser).toEqual(expectedNewUser);
         });        
 
     });
-    // END: propTradeCtrl tests
+    // END: startCtrl tests
     
 });
