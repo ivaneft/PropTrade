@@ -1,0 +1,10 @@
+{
+    "name": "prop-trade-app",
+    "version": "0.0.1",
+    "main": "js/*.js",
+    "devDependencies": {
+        "angular-mocks": "1.3.14",
+        "angular": "1.3.14",
+        "angular-route": "1.3.14"
+    }
+}

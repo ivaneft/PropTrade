@@ -1,0 +1,45 @@
+﻿
+<div>    
+    <h3>All properties</h3>
+    <div class="well">
+        
+    </div>
+
+    <table class="table table-hover">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Seller</th>
+            <th>Make an offer</th>
+        </tr>
+        <tr ng-repeat="property in properties">
+            <td>{{ property.Name }}</td>
+            <td>{{ property.Price }}</td>
+            <td>{{ property.Owner.Username }}</td>
+
+            <td>
+                <button class="btn-link" ng-click="openOffer(property.Id);creating = true;" ng-show="!creating">Make an offer</button>
+
+                <form name="form" ng-show="creating" class="form-inline">
+
+                    <div class="form-group" ng-class="{'has-error':form.price.$invalid && form.price.$touched}">
+                        <label>Price you offer</label>
+                        <input type="number" min="1" name="price" ng-model="newOffer.Value" class="form-control" required />
+                        <div ng-show="form.$submitted || form.price.$touched">
+                            <span ng-show="form.price.$error.required">Price is required</span>
+                            <span ng-show="form.price.$error.min">Price cannot be less than 1</span>
+                            <span ng-show="form.price.$error.number">Price has to be a number</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" ng-click="makeOffer(property.Id);creating = false;" ng-disabled="form.$invalid">
+                        <span ng-class="{'glyphicon glyphicon-refresh glyphicon-refresh-animate' : loadings.submitting}"></span>
+                        Go!
+                    </button>
+                    <button class="btn btn-warning" ng-click="cancel();creating = false;">Cancel</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+</div>

@@ -1,0 +1,19 @@
+﻿{
+  "name": "prop-trade-app",
+  "description": "PropTrade app",
+  "author": "Ivan Eftimov",
+  "version": "0.0.1",
+  "repository": {
+    "type": "tfs",
+    "url": ""
+  },
+  "devDependencies": {
+    "bower": "*",
+    "grunt": "*",
+    "grunt-karma": "*",
+    "karma": "*",      
+    "karma-jasmine": "*",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-chrome-launcher": "*"
+  }
+}

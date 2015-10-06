@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/PropTrade.App/bin
+/packages
+/PropTrade.App/obj
+/PropTrade.App/Properties/PublishProfiles
+/PropTrade.Api/bin
+/PropTrade.Api/obj
+/PropTrade.Api/Properties/PublishProfiles

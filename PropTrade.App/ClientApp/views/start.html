@@ -1,0 +1,92 @@
+﻿
+<div>
+
+    <div class="well">
+        <h4>Login</h4>
+        <form name="signInForm">
+            <div class="form-group" ng-class="{'has-error':signInForm.email.$invalid && signInForm.email.$touched}">
+                <label>Email</label>
+                <input name="email" ng-model="credentials.Username" class="form-control" required />
+                <div ng-show="signInForm.$submitted || signInForm.email.$touched">
+                    <span ng-show="signInForm.email.$error.required">Email is required</span>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error':signInForm.password.$invalid && signInForm.password.$touched}">
+                <label>Password</label>
+                <input type="password" name="password" ng-model="credentials.Password" class="form-control" required />
+                <div ng-show="signInForm.$submitted || signInForm.password.$touched">
+                    <span ng-show="signInForm.password.$error.required">Password is required</span>
+                    <span ng-show="invalidCredentials">Invalid credentials</span>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" ng-click="login()" ng-disabled="signInForm.$invalid">
+                <span ng-class="{'glyphicon glyphicon-refresh glyphicon-refresh-animate' : loadings.signingIn}"></span>
+                Sign in
+            </button>
+        </form>
+    </div>
+
+    <div class="well">
+        <h4>Login</h4>
+        <form name="signUpForm">
+            <div class="form-group" ng-class="{'has-error':signUpForm.email.$invalid && signUpForm.email.$touched}">
+                <label>Email</label>
+                <input name="email" ng-model="newUser.Username" class="form-control" required />
+                <div ng-show="signUpForm.$submitted || signUpForm.email.$touched">
+                    <span ng-show="signUpForm.email.$error.required">Email is required</span>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error':signUpForm.password.$invalid && signUpForm.password.$touched}">
+                <label>Password</label>
+                <input type="password" name="password" ng-model="newUser.Password" class="form-control" required />
+                <div ng-show="signUpForm.$submitted || signUpForm.password.$touched">
+                    <span ng-show="signUpForm.password.$error.required">Password is required</span>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error':signUpForm.firstName.$invalid && signUpForm.firstName.$touched}">
+                <label>First name</label>
+                <input name="firstName" ng-model="newUser.FirstName" class="form-control" required />
+                <div ng-show="signUpForm.$submitted || signUpForm.firstName.$touched">
+                    <span ng-show="signUpForm.firstName.$error.required">First name is required</span>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error':signUpForm.lastName.$invalid && signUpForm.lastName.$touched}">
+                <label>Last name</label>
+                <input name="lastName" ng-model="newUser.LastName" class="form-control" required />
+                <div ng-show="signUpForm.$submitted || signUpForm.lastName.$touched">
+                    <span ng-show="signUpForm.lastName.$error.required">First name is required</span>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error':signUpForm.role.$invalid && signUpForm.role.$touched}">
+                <label>Role</label>
+                <select name="role" ng-model="newUser.CurrentTradeRole">
+                    <option>Buyer</option>
+                    <option>Seller</option>
+                </select>
+            </div>
+
+            <label class="text-left">Location</label>
+            <div class="input-group-addon">
+                <label>Number</label>
+                <input name="number" ng-model="newUser.Address.Number" class="form-control" />
+                <label>Street</label>
+                <input name="street" ng-model="newUser.Address.Street" class="form-control" />
+                <label>City</label>
+                <input name="city" ng-model="newUser.Address.City" class="form-control" />
+                <label>Country</label>
+                <input name="country" ng-model="newUser.Address.Country" class="form-control" />
+            </div>
+
+            <button class="btn btn-primary" ng-click="register()" ng-disabled="signUpForm.$invalid">
+                <span ng-class="{'glyphicon glyphicon-refresh glyphicon-refresh-animate' : loadings.signingUp}"></span>
+                Sign up
+            </button>
+        </form>
+    </div>
+</div>
