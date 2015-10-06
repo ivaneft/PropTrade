@@ -3,10 +3,11 @@
 @{ ViewBag.Title = "PropTrade"; }
 
 <script src="@Url.Content("~/ClientApp/js/propTradeServices.js")"></script>
+<script src="@Url.Content("~/ClientApp/js/propTradeDirectives.js")"></script>
 <script src="@Url.Content("~/ClientApp/js/propTradeApp.js")"></script>
 
 <div ng-app="propTradeApp">
-    <h4>Hi {{ autauthData.DisplayName ? authData.userDisplayName : authData.userName }}</h4>
+    <div login-logout></div>
     <hr />
     <div ng-view></div>
 </div>

@@ -120,12 +120,14 @@
   <ItemGroup>
     <Content Include="ClientApp\Gruntfile.js" />
     <Content Include="ClientApp\js\propTradeApp.js" />
+    <Content Include="ClientApp\js\propTradeDirectives.js" />
     <Content Include="ClientApp\js\propTradeServices.js" />
     <Content Include="ClientApp\test\propTradeSpec.js" />
     <Content Include="ClientApp\views\about.html" />
     <Content Include="ClientApp\views\start.html" />
     <Content Include="ClientApp\views\buyer.html" />
     <Content Include="ClientApp\views\seller.html" />
+    <Content Include="ClientApp\views\templates\loginLogout.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -169,7 +171,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

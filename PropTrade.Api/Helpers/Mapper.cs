@@ -1,5 +1,6 @@
 ﻿using PropTrade.Api.Dtos;
 using PropTrade.Api.Entities;
+using System.Linq;
 
 namespace PropTrade.Api.Helpers
 {
@@ -65,7 +66,8 @@ namespace PropTrade.Api.Helpers
                 Sold = property.Sold,
                 Created = property.Created,
                 Location = Mapper.MapAddressEntityToDto(property.Location),
-                Owner = mapOwner 
+                Offers = property.Offers.Select(o => Mapper.MapOfferEntityToDto(o, true)),
+                Owner = mapOwner
                     ? Mapper.MapUserAndProfileToRelatedUserDto(property.Owner.User, property.Owner) 
                     : new RelatedUserDto() { UserId = property.OwnerId }
             };

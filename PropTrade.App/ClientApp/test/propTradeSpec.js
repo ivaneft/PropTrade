@@ -12,7 +12,7 @@
         $scope = $rootScope.$new();
         $httpBackend = $injector.get('$httpBackend');
         $controller = $injector.get('$controller');
-        //calculator = $injector.get('calculator');
+        //calculator = $injector.get('propTradeApp');
     }));
 
     describe('propTradeCtrl', function () {

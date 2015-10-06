@@ -1,5 +1,5 @@
 ﻿; (function () {
-    var propTradeApp = angular.module('propTradeApp', ['ngRoute', 'propTradeServices']);
+    var propTradeApp = angular.module('propTradeApp', ['ngRoute', 'propTradeServices', 'propTradeDirectives']);
 
     propTradeApp.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {        
         $routeProvider.
@@ -91,7 +91,7 @@
         $scope.newOffer = {
             Value: 1,
             Buyer: {
-                UserId: $rootScope.authData.userId
+                UserId: ''
             }
         };
         $scope.loadings = {
@@ -110,6 +110,7 @@
         $scope.loadProperties();
 
         $scope.makeOffer = function (propertyId) {
+            $scope.newOffer.Buyer.UserId = $rootScope.authData.userId;
             $scope.newOffer.PropertyId = propertyId;
             offerService.createOffer($scope.newOffer).then(function () {
                 $scope.loadProperties();
@@ -130,7 +131,7 @@
         $scope.newProperty = {
             Location: {},
             Owner: {
-                UserId: $rootScope.authData.userId
+                UserId: ''
             }
         };
         $scope.loadings = {
@@ -150,6 +151,7 @@
 
         $scope.create = function () {
             $scope.loadings.submitting = true;
+            $scope.newProperty.Owner.UserId = $rootScope.authData.userId;
             propertyService.createProperty($scope.newProperty).then(function (response) {
                 $scope.loadings.submitting = false;
                 $scope.creating = false;

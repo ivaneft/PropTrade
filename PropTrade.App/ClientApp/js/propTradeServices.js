@@ -71,7 +71,7 @@
         };
 
         var _register = function (newUser) {
-            _logOut();
+            _logout();
             var deferred = $q.defer();
 
             $http.post('/api/v1/users', newUser).success(function (response) {
@@ -100,14 +100,14 @@
                     deferred.resolve(response);
 
                 }).error(function (err, status) {
-                    _logOut();
+                    _logout();
                     deferred.reject(err);
                 });
 
             return deferred.promise;
         };
 
-        var _logOut = function () {
+        var _logout = function () {
 
             $document.prop('cookie', 'propTradeAuth=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/');
 
@@ -126,7 +126,7 @@
             var deferred = $q.defer();
 
             if (!authToken) {
-                _logOut();
+                _logout();
                 deferred.resolve(_authData);
                 $location.path('/start');
             } else {
@@ -144,7 +144,7 @@
                     deferred.resolve(_authData);
 
                 }).error(function (err, status) {
-                    _logOut();
+                    _logout();
                     deferred.reject(err);
                 });
             }
@@ -154,7 +154,7 @@
 
         authServiceFactory.register = _register;
         authServiceFactory.login = _login;
-        authServiceFactory.logOut = _logOut;
+        authServiceFactory.logout = _logout;
         authServiceFactory.getAuthData = _getAuthData;
 
         return authServiceFactory;

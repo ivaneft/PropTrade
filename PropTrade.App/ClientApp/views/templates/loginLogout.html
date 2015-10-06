@@ -1,0 +1,4 @@
+﻿<div ng-show="authData.isAuth">
+    {{ authData.userRole }}: {{ authData.DisplayName ? authData.userDisplayName : authData.userName }}
+    <a ng-click="logout()">Logout</a>
+</div>

@@ -37,6 +37,6 @@ namespace PropTrade.Api.Entities
         
         public virtual UserProfile Owner { get; set; }
         
-        public virtual List<Offer> Offers { get; set; }
+        public virtual ICollection<Offer> Offers { get; set; }
     }
 }

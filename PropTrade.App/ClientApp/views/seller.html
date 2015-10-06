@@ -56,12 +56,20 @@
             <th>Name</th>
             <th>Price</th>
             <th>Seller</th>
+            <th>Offers</th>
             <th>Actions</th>
         </tr>
         <tr ng-repeat="property in properties">
             <td>{{ property.Name }}</td>
             <td>{{ property.Price }}</td>
             <td>{{ property.Owner.Username }}</td>
+            <td>
+                <ul>
+                    <li ng-repeat="offer in property.Offers">
+                        <b>{{ offer.Buyer.Username }}</b> offered <b>{{ offer.Value }}</b>
+                    </li>
+                </ul>
+            </td>
 
             <td class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown">
