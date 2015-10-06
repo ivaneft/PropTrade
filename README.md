@@ -1,1 +1,1 @@
-# PropTrade
+# PropTradeApp
