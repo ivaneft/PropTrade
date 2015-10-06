@@ -76,6 +76,7 @@ namespace PropTrade.Api.Controllers
             return Ok(new UserDto()
             {                
                 Id = dbResult.Profile.Id,
+                Username = dbResult.Username,
                 FirstName = dbResult.Profile.FirstName,
                 LastName = dbResult.Profile.LastName,
                 Created = dbResult.Profile.Created,
